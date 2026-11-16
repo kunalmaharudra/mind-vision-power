@@ -1,0 +1,2 @@
+import Sidebar from "@/components/Sidebar";import LogoutButton from "@/components/LogoutButton";import {requireRole} from "@/lib/auth";
+export default async function AdminLayout({children}:{children:React.ReactNode}){await requireRole("admin");return <div className="shell"><Sidebar role="admin"/><div className="main"><header className="topbar"><b>Administrator Console</b><LogoutButton/></header><main className="content">{children}</main></div></div>}

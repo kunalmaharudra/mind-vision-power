@@ -1,0 +1,2 @@
+import Sidebar from "@/components/Sidebar";import LogoutButton from "@/components/LogoutButton";import {requireRole} from "@/lib/auth";
+export default async function StudentLayout({children}:{children:React.ReactNode}){await requireRole("student");return <div className="shell"><Sidebar role="student"/><div className="main"><header className="topbar"><b>Student Portal</b><LogoutButton/></header><main className="content">{children}</main></div></div>}

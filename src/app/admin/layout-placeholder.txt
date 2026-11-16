@@ -1,0 +1,1 @@
+Admin route layout is protected by requireRole('admin').

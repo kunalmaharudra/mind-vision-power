@@ -1,0 +1,2 @@
+import {requireRole} from "@/lib/auth";import CourseManager from "@/components/CourseManager";
+export default async function Courses(){const {supabase}=await requireRole("admin");const {data}=await supabase.from("courses").select("id,title,description,thumbnail_path,published,created_at").order("created_at",{ascending:false});return <><div className="heading"><div><h1>Course manager</h1><p>Create course folders and upload course materials.</p></div></div><CourseManager initialCourses={data??[]}/></>}
